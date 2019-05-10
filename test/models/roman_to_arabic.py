@@ -42,3 +42,8 @@ class TestRomanToArabicConverter:
         converter = RomanToArabicConverter('M')
         converter.convert()
         assert converter.arabic_number == 1000
+
+    def test_convert__should_convert_IV_to_4(self):
+        converter = RomanToArabicConverter('IV')
+        converter.convert()
+        assert converter.arabic_number == 4

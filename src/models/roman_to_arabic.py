@@ -15,7 +15,12 @@ class RomanToArabicConverter:
 
     def convert(self):
         numeral = self.roman_numeral
-        for char in numeral:
-            for key, value in self.VALUES.items():
-                if char == key:
-                    self.arabic_number += value
+
+        for index, value in enumerate(numeral):
+            if index == len(self.roman_numeral) - 1:
+                self.arabic_number += self.VALUES.get(value)
+            elif index < len(self.roman_numeral) - 1:
+                value_at_current_index = self.VALUES.get(value)
+                value_at_next_index = self.VALUES.get(numeral[index + 1])
+                if value_at_current_index < value_at_next_index:
+                    self.arabic_number -= value_at_current_index
