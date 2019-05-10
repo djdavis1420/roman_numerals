@@ -22,3 +22,8 @@ class TestRomanToArabicConverter:
         converter = RomanToArabicConverter('X')
         converter.convert()
         assert converter.arabic_number == 10
+
+    def test_convert__should_convert_L_to_50(self):
+        converter = RomanToArabicConverter('L')
+        converter.convert()
+        assert converter.arabic_number == 50
