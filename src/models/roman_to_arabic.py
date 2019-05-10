@@ -24,3 +24,5 @@ class RomanToArabicConverter:
                 value_at_next_index = self.VALUES.get(numeral[index + 1])
                 if value_at_current_index < value_at_next_index:
                     self.arabic_number -= value_at_current_index
+                elif value_at_current_index > value_at_next_index:
+                    self.arabic_number += value_at_current_index
