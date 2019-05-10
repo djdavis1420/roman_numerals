@@ -7,3 +7,8 @@ class TestRomanToArabicConverter:
         converter = RomanToArabicConverter('I')
         assert converter.roman_numeral == 'I'
         assert converter.arabic_number == 0
+
+    def test_convert__should_convert_I_to_1(self):
+        converter = RomanToArabicConverter('I')
+        converter.convert()
+        assert converter.arabic_number == 1
