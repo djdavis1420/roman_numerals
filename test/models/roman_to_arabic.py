@@ -12,3 +12,8 @@ class TestRomanToArabicConverter:
         converter = RomanToArabicConverter('I')
         converter.convert()
         assert converter.arabic_number == 1
+
+    def test_convert__should_convert_V_to_5(self):
+        converter = RomanToArabicConverter('V')
+        converter.convert()
+        assert converter.arabic_number == 5

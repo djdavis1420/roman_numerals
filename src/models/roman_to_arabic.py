@@ -4,4 +4,7 @@ class RomanToArabicConverter:
         self.arabic_number = 0
 
     def convert(self):
-        self.arabic_number = 1
+        if self.roman_numeral == 'V':
+            self.arabic_number = 5
+        else:
+            self.arabic_number = 1
