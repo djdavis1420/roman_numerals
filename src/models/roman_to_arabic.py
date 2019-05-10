@@ -12,17 +12,21 @@ class RomanToArabicConverter:
     def __init__(self, roman_numeral):
         self.roman_numeral = roman_numeral
         self.arabic_number = 0
+        self.convert()
 
     def convert(self):
         numeral = self.roman_numeral
 
-        for index, value in enumerate(numeral):
+        for index, character in enumerate(numeral):
             if index == len(self.roman_numeral) - 1:
-                self.arabic_number += self.VALUES.get(value)
+                self.arabic_number += self.VALUES.get(character)
             elif index < len(self.roman_numeral) - 1:
-                value_at_current_index = self.VALUES.get(value)
-                value_at_next_index = self.VALUES.get(numeral[index + 1])
-                if value_at_current_index < value_at_next_index:
-                    self.arabic_number -= value_at_current_index
-                elif value_at_current_index >= value_at_next_index:
-                    self.arabic_number += value_at_current_index
+                self.__parse_character(numeral, index, character)
+
+    def __parse_character(self, numeral, index, character):
+        value_at_current_index = self.VALUES.get(character)
+        value_at_next_index = self.VALUES.get(numeral[index + 1])
+        if value_at_current_index < value_at_next_index:
+            self.arabic_number -= value_at_current_index
+        elif value_at_current_index >= value_at_next_index:
+            self.arabic_number += value_at_current_index
