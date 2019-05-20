@@ -19,12 +19,13 @@ class ArabicToRomanConverter:
         'I': 1
     }
 
-    def __init__(self, arabic_number):
-        self.arabic_number = arabic_number
+    def __init__(self):
+        self.arabic_number = 0
         self.roman_numeral = ''
 
-    def convert(self):
-        number = self.arabic_number
+    def convert(self, arabic_number):
+        self.arabic_number = arabic_number
+        number = arabic_number
 
         for key, value in self.VALUES.items():
             while number >= value:
