@@ -7,10 +7,10 @@ from src.models.roman_to_arabic import RomanToArabicConverter
 
 def console_app():
     input_string = input("Enter a valid Roman Numeral or Arabic Number.\nInput: ")
-    translate(input_string)
+    convert(input_string)
 
 
-def translate(input_string):
+def convert(input_string):
     try:
         number = int(input_string)
         converter = ArabicToRomanConverter()
